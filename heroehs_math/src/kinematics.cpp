@@ -156,6 +156,7 @@ void Kinematics::FowardKnematics(double joint[7], std::string left_right)
 	}
 	for(int i=1; i<7; i++)
 	{
+
 		H[i](0,0) = floor(100000.*(cos(sum_theta[i])+0.000005))/100000.;
 		H[i](0,1) = floor(100000.*(-cos(dh_alpha[i])*sin(sum_theta[i])+0.000005))/100000.;
 		H[i](0,2) = floor(100000.*(sin(dh_alpha[i])*sin(sum_theta[i])+0.000005))/100000.;
@@ -216,7 +217,7 @@ void Kinematics::FowardKnematics(double joint[7], std::string left_right)
 	H[0](3,1) = 0;
 	H[0](3,2) = 0;
 	H[0](3,3) = 1;
-	//// foot frame 을 pelvis frame 과 일치 시킨다.
+	//// foot frame 을 Global frame 과 일치 시킨다.
 	if(!left_right.compare("left")) // left
 	{
 		H[0](1,3) = 0.09;
