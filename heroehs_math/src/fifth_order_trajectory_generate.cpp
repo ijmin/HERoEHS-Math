@@ -116,7 +116,7 @@ double FifthOrderTrajectory::fifth_order_traj_gen_one_value(Eigen::MatrixXd join
 	if(detect_change_final_value(joint_(0,1), joint_(0,3), joint_(0,7)))
 	{
 		current_time = 0;
-		ROS_INFO("One Value Change!");
+		//ROS_INFO("One Value Change!");
 	}
 	result_one_joint_ = fifth_order_traj_gen(current_pose, joint_(0,1), current_velocity, joint_(0,3), joint_(0,4), joint_(0,5), joint_(0,6), joint_(0,7));
 
